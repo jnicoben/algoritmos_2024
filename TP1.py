@@ -12,7 +12,7 @@ def roman_to_decimal(roman):
         return roman_values[roman[0]] + roman_to_decimal(roman[1:])
 
 # Ejemplo de uso:
-numero_romano = "I"
+numero_romano = "XXI"
 print(f"{numero_romano} en decimal es: {roman_to_decimal(numero_romano)}")
 
 
@@ -32,7 +32,7 @@ def usar_la_fuerza(mochila, indice=0):
         return usar_la_fuerza(mochila, indice + 1)
 
 # Ejemplo de uso
-mochila_ejemplo = ["comida", "agua", "sable de luz", "mapa"]
+mochila_ejemplo = ["comida", "agua", "mapa", "sable de luz"]
 resultado = usar_la_fuerza(mochila_ejemplo)
 if resultado != -1:
     print(f"Encontramos un sable de luz después de sacar {resultado} objetos.")
