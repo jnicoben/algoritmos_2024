@@ -19,14 +19,6 @@ print(f"{numero_romano} en decimal es: {roman_to_decimal(numero_romano)}")
 
 #! ejercicio 22
 def usar_la_fuerza(mochila, indice=0):
-    """
-    Función recursiva para buscar un sable de luz en la mochila.
-    Args:
-        mochila (list): Vector que representa la mochila con objetos.
-        indice (int): Índice actual en la mochila.
- objetos sacados antes de encontrar el sable de luz (o -1 si no se encu    Returns:
-        int: Número deentra).
-    """
     if indice >= len(mochila):
         # No quedan más objetos en la mochila
         return -1
