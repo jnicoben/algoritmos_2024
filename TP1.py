@@ -1,3 +1,5 @@
+#! ejercicio 5
+
 def roman_to_decimal(roman):
     if not roman:
         return 0
@@ -12,3 +14,35 @@ def roman_to_decimal(roman):
 # Ejemplo de uso:
 numero_romano = "I"
 print(f"{numero_romano} en decimal es: {roman_to_decimal(numero_romano)}")
+
+
+
+#! ejercicio 22
+def usar_la_fuerza(mochila, indice=0):
+    """
+    Función recursiva para buscar un sable de luz en la mochila.
+    Args:
+        mochila (list): Vector que representa la mochila con objetos.
+        indice (int): Índice actual en la mochila.
+ objetos sacados antes de encontrar el sable de luz (o -1 si no se encu    Returns:
+        int: Número deentra).
+    """
+    if indice >= len(mochila):
+        # No quedan más objetos en la mochila
+        return -1
+    
+    objeto_actual = mochila[indice]
+    if objeto_actual == "sable de luz":
+        # Encontramos un sable de luz
+        return indice
+    else:
+        # Seguimos buscando
+        return usar_la_fuerza(mochila, indice + 1)
+
+# Ejemplo de uso
+mochila_ejemplo = ["comida", "agua", "sable de luz", "mapa"]
+resultado = usar_la_fuerza(mochila_ejemplo)
+if resultado != -1:
+    print(f"Encontramos un sable de luz después de sacar {resultado} objetos.")
+else:
+    print("No se encontró un sable de luz en la mochila.")
