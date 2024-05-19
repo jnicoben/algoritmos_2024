@@ -12,7 +12,7 @@ def roman_to_decimal(roman):
         return roman_values[roman[0]] + roman_to_decimal(roman[1:])
 
 # Ejemplo de uso:
-numero_romano = "XXI"
+numero_romano = "MCLXXI"
 print(f"{numero_romano} en decimal es: {roman_to_decimal(numero_romano)}")
 
 
