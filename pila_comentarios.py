@@ -1,4 +1,5 @@
-class Stack:
+
+class Stackk:
     
     def __init__(self):
         self.__elements = [] 
@@ -52,8 +53,8 @@ print(pila.pop())
 
 from random import randint #todo randint, funcion que devuelve un numero randomico.
 
-pila = Stack()
-pila_aux = Stack() #!En ella almacenamos los valores de pila original, asi cuando hacemos el barrido (listamos, y aplicamos el pila.pop) no se pierden los valores.
+pila = Stackk()
+pila_aux = Stackk() #!En ella almacenamos los valores de pila original, asi cuando hacemos el barrido (listamos, y aplicamos el pila.pop) no se pierden los valores.
 
 for i in range(10):
     pila.push(randint(1, 99))
@@ -87,14 +88,12 @@ print(pila.on_top())
 #l podemos resolver todos, del 1 al 24.
 
 
-
-
-
-
-
 #!Ejemplo del .append
 """
 #p fruits = ['apple', 'banana', 'cherry']
 #p fruits.append("orange")
 #p print(fruits)
 """
+
+#!CUANDO UTILIZAMOS UNA LIBRERIA, NO TENEMOS QUE DEJAR CODIGO EJECUTABLE. POR ESO LA CREACION DE ESTA CLASE.
+#* Al NOMBRE DE LA CLASE LO MODIFIQUE POR STACKK, ASI NO LLAMA A ESTA CLASE LA PILA.
