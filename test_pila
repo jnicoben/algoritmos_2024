@@ -1,0 +1,20 @@
+from pila import Stack
+from random import randint #todo randint, funcion que devuelve un numero randomico.
+
+pila = Stack()
+pila_aux = Stack() #!En ella almacenamos los valores de pila original, asi cuando hacemos el barrido (listamos, y aplicamos el pila.pop) no se pierden los valores.
+
+for i in range(10):
+    pila.push(randint(1, 99))
+    
+while pila.size() > 0:
+    if pila.on_top() % 2 == 1:
+        pila.pop()
+    else:
+        pila_aux.push(pila.pop())
+
+while pila_aux.size() > 0:
+    pila.push(pila_aux.pop())
+
+print()
+print(pila.size())
