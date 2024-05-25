@@ -69,6 +69,7 @@ while pila.size() > 0:
     print(data)
     pila_aux.push(data)
 
+print()
 #! Reconstruccion
 while pila_aux.size() > 0:
     pila.push(pila_aux.pop())
