@@ -3,8 +3,6 @@ from random import randint #todo randint, funcion que devuelve un numero randomi
 
 pila = Stack()
 pila_aux = Stack() #!En ella almacenamos los valores de pila original, asi cuando hacemos el barrido (listamos, y aplicamos el pila.pop) no se pierden los valores.
-x = Stack()
-y = Stack()
 #!Ejercicio 2
 """
 for i in range(10):
@@ -81,38 +79,77 @@ while pila_aux.size() > 0:
     pila.push(pila_aux.pop())
     print(pila.pop(), end=' ')
 """
-"""
+
 #! Ejercicio 5
 x = Stack()
 y = Stack()
 #l Determinar si una cadena de caracteres es un palíndromo.
-cadena = input("Ingrese una cadena: ")
-cadena = cadena.replace(" ", "").lower() #Eliminamos espacios y convertimos a minusculas.
+palabra = input("Ingrese una cadena: ")
+cadena = palabra.replace(" ", "").lower() #Eliminamos espacios y convertimos a minusculas.
 #// lista = [cadena]
 #// print(lista)
 tamaño = len(cadena)
 #// print(tamaño)
 caracteres = list(cadena)
+palindromo = True
+if  len(caracteres) > 0:
+    for i in range(len(caracteres)):
+        aux = caracteres.pop()
+        pila.push(aux)
+        pila_aux.push(aux)
+if pila.size() > 0:
+    for i in range(pila.size()):
+        aux = pila.pop()
+        caracteres.append(aux)
+if pila_aux.size() > 0:
+    for i in range(pila_aux.size()):
+        aux = caracteres.pop()
+        aux2 = pila_aux.pop()
+        if aux != aux2:
+            palindromo = False
+if palindromo:
+    print("Es palindromo: ", palabra)
+else:
+    print("No es palindromo: ", palabra)
+                
+
 #// print(caracteres)
 
-for i in range(tamaño):
-    letra = caracteres.pop()
-    pila.push(letra)
+# for i in range(tamaño):
+#     letra = caracteres.pop()
+#     pila.push(letra)
+#     data = pila.pop()
+#     print(data)
+#     pila_aux.push(data)
 
-#! Listar
-while pila.size() > 0:
-    data = pila.pop()
-    print(data)
-    pila_aux.push(data)
 
-print()
+# #! Listar
+# while pila.size() > 0 and pila_aux.size() > 0:
+#     data = pila.pop()
+#     data2 = pila_aux.pop()
+#     print("data valor: ", data)
+#     if data != data2:
+#         palindromo = False
+#         break
 
+# print("soy palindromo: ", palindromo )
+
+"""
 #! Reconstruccion
 while pila_aux.size() > 0:
     data2 = pila.pop()
     pila.push(pila_aux.pop())
     print(pila.pop())
 """
+
+#!Ejercicio 16
+"""
+Se tienen dos pilas con personajes de Star Wars, en una los del episodio V de “The empire
+strikes back” y la otra los del episodio VII “The force awakens”. Desarrollar un algoritmo que
+permita obtener la intersección de ambas pilas, es decir los personajes que aparecen en ambos
+episodios.
+"""
+
 
 
 

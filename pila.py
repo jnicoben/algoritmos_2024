@@ -16,3 +16,5 @@ class Stack:
             return None
     def size(self):
         return len(self.__elements)
+    def is_empty(self):
+        return(self.__elements)
