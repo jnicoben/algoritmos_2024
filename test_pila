@@ -81,17 +81,29 @@ while pila_aux.size() > 0:
 """
 
 #! Ejercicio 5
-x = Stack()
-y = Stack()
 #l Determinar si una cadena de caracteres es un palíndromo.
+"""
 palabra = input("Ingrese una cadena: ")
 cadena = palabra.replace(" ", "").lower() #Eliminamos espacios y convertimos a minusculas.
-#// lista = [cadena]
-#// print(lista)
+#p Version Alternativa
+cadenainvertida = cadena[::-1]
+palindromo = True
+for i in range(len(cadena)):
+    if cadena[i] != cadenainvertida[i]:
+        palindromo = False
+if palindromo:
+    print("Es palindromo: ", palabra)
+else:
+    print("No es palindromo: ", palabra)
+"""
+"""
+#!Ejercicio completo
+palabra = input("Ingrese una cadena: ")
+cadena = palabra.replace(" ", "").lower() #Eliminamos espacios y convertimos a minusculas.
 tamaño = len(cadena)
-#// print(tamaño)
 caracteres = list(cadena)
 palindromo = True
+
 if  len(caracteres) > 0:
     for i in range(len(caracteres)):
         aux = caracteres.pop()
@@ -111,35 +123,6 @@ if palindromo:
     print("Es palindromo: ", palabra)
 else:
     print("No es palindromo: ", palabra)
-                
-
-#// print(caracteres)
-
-# for i in range(tamaño):
-#     letra = caracteres.pop()
-#     pila.push(letra)
-#     data = pila.pop()
-#     print(data)
-#     pila_aux.push(data)
-
-
-# #! Listar
-# while pila.size() > 0 and pila_aux.size() > 0:
-#     data = pila.pop()
-#     data2 = pila_aux.pop()
-#     print("data valor: ", data)
-#     if data != data2:
-#         palindromo = False
-#         break
-
-# print("soy palindromo: ", palindromo )
-
-"""
-#! Reconstruccion
-while pila_aux.size() > 0:
-    data2 = pila.pop()
-    pila.push(pila_aux.pop())
-    print(pila.pop())
 """
 
 #!Ejercicio 16
@@ -150,16 +133,40 @@ permita obtener la intersección de ambas pilas, es decir los personajes que apa
 episodios.
 """
 
-
-
-
-
-
+    # Agregar personajes al episodio V
+epiV = ["Luke Skywalker", "Han Solo", "Leia Organa", "Han Solo", "Boba Fett", "Emperor Palpatine", "Darth Vader", "Yoda", "Obi-Wan Kenobi", "Lando Calrissian", "C-3PO", "Chewbacca", "R2-D2", "Admiral Piett"]
+    # Agregar personajes al episodio VII
+epiVII = ["Luke Skywalker", "Leia Organa", "Han Solo", "Kylo Ren", "Rey", "Finn", "Poe Dameron", "Maz Kanata", "Supreme Leader Snoke", "Captain Phasma", "C-3PO", "BB-8", "Chewbacca", "R2-D2"]
+for i in range(len(epiVII)):
+    epiVIIaux = epiVII.copy()
     
-
-
-
-
-
-
-
+aux4 = epiVIIaux.copy()
+# se llena la primer pila
+if  len(epiV) > 0:
+    for i in range(len(epiV)):
+        auxV = epiV.pop()
+        pila.push(auxV)
+        #pila_aux.push(aux)
+        #print(pila.on_top())
+# se llena la pila auxiliar
+if  len(epiVII) > 0:
+    for i in range(len(epiVII)):
+        auxVII = epiVII.pop()
+        #pila.push(auxVII)
+        pila_aux.push(auxVII)
+# Guarda en la lista epiV lo que esta en la cima de pila
+# if pila.size() > 0:
+#     for i in range(pila.size()):
+#         aux = pila.pop()
+#         epiV.append(aux)
+if pila.size() > 0:
+    for i in range(pila.size()):
+        aux = pila.pop() #cima pila 1 #funciona
+        for i in range(pila_aux.size()):
+            aux2 = pila_aux.pop() #cima pila 2 #funcion
+            if (aux == aux2):
+                print("El/los peronaje/s que coincide/n es/son: ", aux)
+        for i in range(len(epiVIIaux)):
+            #aux4 = epiVIIaux.copy()
+            aux3 = epiVIIaux.pop()
+            pila_aux.push(aux3)
