@@ -19,6 +19,3 @@ class Stack:
     
     def is_empty(self):
         return(self.__elements)
-    
-    def esta_vacia(self):
-        return len(self.__elements) == 0
