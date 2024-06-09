@@ -29,18 +29,18 @@ class Queue:
     
 
 
-#! Mostrar todos los elementos
+# #! Mostrar todos los elementos
     
-cola_1 = Queue()
-cola_1.arrive(1)
-cola_1.arrive(2)
-cola_1.arrive(3)
-cola_1.arrive(4)
-cola_1.arrive(5)
-print(cola_1.size())
-print(cola_1.on_front())
-for i in range(cola_1.size()):
-    print(cola_1.on_front())
-    cola_1.move_to_end()
-print()
-print(cola_1.size())
+# cola_1 = Queue()
+# cola_1.arrive(1)
+# cola_1.arrive(2)
+# cola_1.arrive(3)
+# cola_1.arrive(4)
+# cola_1.arrive(5)
+# print(cola_1.size())
+# print(cola_1.on_front())
+# for i in range(cola_1.size()):
+#     print(cola_1.on_front())
+#     cola_1.move_to_end()
+# print()
+# print(cola_1.size())

@@ -1,0 +1,65 @@
+personajes_star_wars = [
+    {'nombre': 'Luke Skywalker', 'especie': 'Humano', 'altura': 172},
+    {'nombre': 'Princesa Leia', 'especie': 'Humano', 'altura': 150},
+    {'nombre': 'Han Solo', 'especie': 'Humano', 'altura': 180},
+    {'nombre': 'Darth Vader', 'especie': 'Humano', 'altura': 202},
+    {'nombre': 'Yoda', 'especie': 'Desconocida', 'altura': 66},
+    {'nombre': 'Obi-Wan Kenobi', 'especie': 'Humano', 'altura': 182},
+    {'nombre': 'Chewbacca', 'especie': 'Wookiee', 'altura': 228},
+    {'nombre': 'R2-D2', 'especie': 'Droide', 'altura': 96},
+    {'nombre': 'C-3PO', 'especie': 'Droide', 'altura': 167},
+    {'nombre': 'Padmé Amidala', 'especie': 'Humano', 'altura': 165}]
+
+nuevo_personaje = {'nombre': 'Boba Fett', 'especie': 'Humano', 'altura': 178}
+#! insertar con posicion
+personajes_star_wars.insert(8, nuevo_personaje)
+#! insertar sin posicion
+nuevo_personaje_2 = {'nombre': 'Mace Windu', 'especie': 'Humano', 'altura': 190}
+personajes_star_wars.append(nuevo_personaje_2)
+
+#! tamanio
+print('El total de personajes es de: ', len(personajes_star_wars))
+#! criterios de orden
+def by_name(item):
+    return item['nombre']
+def by_hegiht(item):
+    return item['altura']
+#! ordenar elementos simples
+personajes_star_wars.sort(key=by_hegiht) #l key es la funcion criterio.
+#! busqueda elementos simples
+try:
+    print('El personaje se encuentra en la posicion: ', personajes_star_wars.index('Yoda'))
+except ValueError:
+    print('el elemento que busca no esta en la lista')
+
+#! busqueda elementos simples
+buscado = 'Yoda'
+criterio = 'nombre'
+def search(list_values, criterio, value):
+    for index, element in enumerate(list_values):
+        if element[criterio] == value:
+            return index
+print(f'Yoda esta en la posicion {search(personajes_star_wars, criterio, buscado)}')
+
+#! eliminar un elemento de la lista
+def remove(list_values, criterio, value):
+    index = search(list_values, criterio, value)
+    if index is not None:
+        return list_values.pop(index)
+
+# eliminar = 'R2-D2'
+# result_delete = remove(personajes_star_wars, criterio, eliminar)
+# print(f'Eliminar {eliminar} resultado: {result_delete}')
+
+#! barrido
+print("Listado")
+for index, elemento in enumerate(personajes_star_wars):
+    print(index, elemento['nombre'], elemento['especie'], elemento['altura'])
+
+#! barrido
+def show_list(title, list_values):
+    print()
+    print(f"{title}")
+    for index, elemento in enumerate(list_values):
+        print(index, elemento)
+    print()
