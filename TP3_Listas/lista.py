@@ -62,6 +62,9 @@
 def by_name(item):
     return item['nombre']
 
+def by_year(item):
+    return item['año_aparicion']
+
 def by_temp(item):
     return item['temp']
 
