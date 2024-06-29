@@ -60,7 +60,7 @@
 
 #! criterios de orden
 def by_name(item):
-    return item['name']
+    return item['nombre']
 
 def by_temp(item):
     return item['temp']
@@ -70,9 +70,6 @@ def by_hegiht(item):
 
 def by_house(item):
     return item['casa_comic']+item['nombre']
-
-def by_species(item):
-    return (item['species'] or '') + item['name']
 
 #! ordenar elementos simples
 # personajes_star_wars.sort(key=by_name)

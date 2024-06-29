@@ -1,0 +1,26 @@
+'''
+Dada una lista de números enteros, implementar un algoritmo para dividir dicha lista en dos,
+una que contenga los números pares y otra para los números impares.
+'''
+
+from random import randint
+
+numeros = []
+list_par = []
+list_impar = []
+for i in range(10):
+    numeros.append(randint(1, 9))
+print(numeros)
+
+for num in numeros:
+    if num % 2 == 0:
+        list_par.append(num)
+    else:
+        list_impar.append(num)
+
+print(f"Los numeros pares son: {list_par} y los numeros impares son: {list_impar}")
+
+
+
+
+

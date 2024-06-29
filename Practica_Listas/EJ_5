@@ -1,0 +1,20 @@
+'''
+Dada una lista de números enteros eliminar de estas los números primos.
+'''
+from random import randint
+numeros = []
+list_par = []
+list_impar = []
+
+for i in range(10):
+    numeros.append(randint(1, 9))
+print(numeros)
+cont = []
+for i in range(2, numeros):
+    if (numeros % i == 0):
+        cont =+ 1
+if (cont == 2):
+    print(cont, "primo")
+else:
+    print(cont, "no primo")
+    

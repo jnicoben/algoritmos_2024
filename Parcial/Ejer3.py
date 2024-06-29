@@ -1,4 +1,4 @@
-from lista import by_name, show_list, search, show_list_list, by_temp, remove
+from lista import by_name, show_list, search, show_list_list, by_temp, remove, by_species
 
 """
 Se dispone de una lista de todos los Jedi, de cada uno de estos se conoce 
@@ -596,13 +596,4 @@ jedis = [
 jedis.sort(key=by_name)
 show_list('Los jedis son: ', jedis)
 
-
-search(jedis, by_name, 'Ahsoka Tano')
-
-print(f'Yoda esta en la posicion {search(jedis, name, Ahsoka Tano)}')
-#print(search(jedis, by_name, 'Ahsoka Tano'))
-
-# def search(list_values, criterio, value):
-#     for index, element in enumerate(list_values):
-#         if element[criterio] == value:
-#             return index
+jedis.sort(key=by_species)

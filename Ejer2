@@ -206,35 +206,5 @@ mostrar_dinosaurios_con_T_pilas(dinosaurios)
 
 
 
-def filtrar_dinosaurios_livianos(dinosaurios):
-    pila = []
-    dinosaurios_livianos = []
-
-    for dino in dinosaurios:
-        peso_numerico = float(dino.peso.split()[0])
-        if peso_numerico < 275:
-            pila.append(dino)
-
-    while pila:
-        dinosaurio = pila.pop()
-        dinosaurios_livianos.append(dinosaurio)
-
-    return dinosaurios_livianos
-
-# Crear instancias de dinosaurios
-dinosaurios = [
-    Dinosaurio("Velociraptor", "Dromaeosauridae", "15 kg"),
-    Dinosaurio("Carnotaurus", "Theropoda", "1500 kg"),
-    # ... otros dinosaurios ...
-]
-
-# Filtrar dinosaurios livianos
-dinosaurios_livianos = filtrar_dinosaurios_livianos(dinosaurios)
-
-# Imprimir los dinosaurios livianos
-for dino in dinosaurios_livianos:
-    print(f"{dino.nombre} ({dino.especie}): {dino.peso}")
-
-
 
 
