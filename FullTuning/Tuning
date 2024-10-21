@@ -1,0 +1,76 @@
+partes_tuning = [
+    {
+        "nombre": "motor",
+        "acero": 65,
+        "goma": 165,
+        "plastico": 30,
+        "metal_c": 105,
+        "plata": 0,
+        "oro": 0,
+        "hierro": 0,
+        "aluminio": 0,
+        "cobre": 0
+        
+    },
+    {
+        "nombre": "turbo",
+        "acero": 0,
+        "goma": 0,
+        "plastico": 0,
+        "metal_c": 0,
+        "plata": 160,
+        "oro": 90,
+        "hierro": 0,
+        "aluminio": 0,
+        "cobre": 0
+    },
+    {
+        "nombre": "caja_cambios",
+        "acero": 0,
+        "goma": 0,
+        "plastico": 0,
+        "metal_c": 0,
+        "plata": 0,
+        "oro": 0,
+        "hierro": 40,
+        "aluminio": 50,
+        "cobre": 95
+    },
+    {
+    "nombre": "frenos",
+        "acero": 0,
+        "goma": 0,
+        "plastico": 0,
+        "metal_c": 105,
+        "plata": 0,
+        "oro": 0,
+        "hierro": 40,
+        "aluminio": 25,
+        "cobre": 95
+    },
+    {
+     "nombre": "suspension",
+        "acero": 15,
+        "goma": 165,
+        "plastico": 0,
+        "metal_c": 105,
+        "plata": 0,
+        "oro": 0,
+        "hierro": 25,
+        "aluminio": 0,
+        "cobre": 0   
+    }
+        
+]
+numero_motores = input("ingrese la cantidad de motores")
+total_acero_motor = 65 * numero_motores
+total_goma_motor = 165 * numero_motores
+total_goma_motor = 30 * numero_motores
+total_metal_c_motor = 105 * numero_motores
+
+
+
+
+total_acero_suspension = 15 * numero_suspension
+
+
