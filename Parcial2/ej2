@@ -1,0 +1,44 @@
+import heapq
+from collections import defaultdict
+
+class GrafoStarWars:
+    def __init__(self):
+        self.grafo = defaultdict(dict)  # Usamos defaultdict para inicializar automáticamente los diccionarios internos
+
+    def agregar_arista(self, personaje1, personaje2, episodios):
+        self.grafo[personaje1][personaje2] = episodios
+        self.grafo[personaje2][personaje1] = episodios
+
+    def prim(self, inicio):
+        visitados = set()
+        heap = [(0, inicio)]
+        arbol = {}
+        while heap:
+            peso, nodo = heapq.heappop(heap)
+            if nodo not in visitados:
+                visitados.add(nodo)
+                arbol[nodo] = {}
+                for vecino, peso_arista in self.grafo[nodo].items():
+                    if vecino not in visitados:
+                        heapq.heappush(heap, (peso_arista, vecino))
+                        arbol[nodo][vecino] = peso_arista
+        return arbol
+
+    def max_episodios_compartidos(self):
+        return max(max(conexiones.values()) for conexiones in self.grafo.values())
+
+# Crear el grafo
+grafo = GrafoStarWars()
+grafo.agregar_arista("Luke Skywalker", "Obi-Wan Kenobi", 3)
+grafo.agregar_arista("Luke Skywalker", "Han Solo", 6)
+grafo.agregar_arista("Leia Organa", "Han Solo", 5)
+# ... Agregar más aristas
+
+# Encontrar el árbol de expansión mínimo y verificar si contiene a Yoda
+arbol_minimo = grafo.prim("Luke Skywalker")
+if "Yoda" in arbol_minimo:
+    print("Yoda está en el árbol de expansión mínimo")
+
+# Encontrar el máximo número de episodios compartidos
+max_episodios = grafo.max_episodios_compartidos()
+print("El máximo número de episodios compartidos es:", max_episodios)
